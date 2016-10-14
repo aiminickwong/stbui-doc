@@ -65,11 +65,11 @@
         navsData: [
           {
             path: '/quick',
-            name: 'test'
+            name: '快速上手'
           },
           {
-            path: '/nav',
-            name: 'nav'
+            path: '/development',
+            name: '开发指南'
           }
         ]
       };

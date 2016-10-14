@@ -120,13 +120,13 @@ background-color:rgba(255,255,255,0.5);
 	  <li class="nav-item">
             <router-link
               active-class="active"
-              to="/start">Start
+              to="/start">开始使用
             </router-link>
           </li>
           <li class="nav-item">
             <router-link
               active-class="active"
-              to="/style">Style
+              to="/style">样式
             </router-link>
           </li>
           <li class="nav-item">

@@ -3,7 +3,7 @@ import navConfig from './nav.config.json';
 const registerRoute = (config) => {
   let route = [{
     path: '/component',
-    redirect: '/component/quickstart',
+    redirect: '/component/layout',
     component: require('./pages/component.vue'),
     children: []
   }];
@@ -60,10 +60,21 @@ let guideRoute = {
 
 let startRoute = {
   path: '/start',
-  name: 'start',
+  name: '开始使用',
   redirect: '/start/quick',
   component: require('./pages/start.vue'),
-  children: []
+  children: [
+    {
+      path: 'quick',
+      name: '快速上手',
+      component: require('./docs/quickstart.md')
+    },
+    {
+      path: 'development',
+      name: '开发指南',
+      component: require('./docs/development.md')
+    }
+  ]
 };
 
 let resourceRoute = {
