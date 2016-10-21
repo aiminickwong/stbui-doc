@@ -25,24 +25,24 @@
     }
   }
   .bg-blue-light {
-    background-color: #58b7ff;
+    background-color: rgba(48, 88, 149, 0.8);;
   }
   .bg-blue,
   .bg-info {
-    background-color: #20a0ff;
+    background-color: #305895;
   }
   .bg-blue-dark {
-    background-color: #1d8ce0;
+    background-color: #2a4d82;
   }
 
   .bg-success {
-    background-color: #13CE66;
+    background-color: #008000;
   }
   .bg-warning {
-    background-color: #f7ba2a;
+    background-color: #ff9212;
   }
   .bg-danger {
-    background-color: #ff4949;
+    background-color: #ff4802;
   }
 
   .bg-black {
@@ -94,13 +94,13 @@ Stbui 主要品牌颜色是鲜艳、友好的蓝色。
 
 <el-row :gutter="12">
   <el-col :span="8">
-    <div class="demo-color-box bg-blue-light">Light Blue<div class="value">#58B7FF</div></div>
+    <div class="demo-color-box bg-blue-light">Light Blue<div class="value">#5979AA</div></div>
   </el-col>
   <el-col :span="8">
-    <div class="demo-color-box bg-blue">Blue<div class="value">#20A0FF</div></div>
+    <div class="demo-color-box bg-blue">Blue<div class="value">#305895</div></div>
   </el-col>
   <el-col :span="8">
-    <div class="demo-color-box bg-blue-dark">Dark Blue<div class="value">#1D8CE0</div></div>
+    <div class="demo-color-box bg-blue-dark">Dark Blue<div class="value">#2A4D82</div></div>
   </el-col>
 </el-row>
 
@@ -110,16 +110,16 @@ Stbui 主要品牌颜色是鲜艳、友好的蓝色。
 
 <el-row :gutter="12">
   <el-col :span="6">
-    <div class="demo-color-box bg-info">Blue<div class="value">#20A0FF</div></div>
+    <div class="demo-color-box bg-info">Blue<div class="value">#305895</div></div>
   </el-col>
   <el-col :span="6">
-    <div class="demo-color-box bg-success">Success<div class="value">#13CE66</div></div>
+    <div class="demo-color-box bg-success">Success<div class="value">#008000</div></div>
   </el-col>
   <el-col :span="6">
-    <div class="demo-color-box bg-warning">Warning<div class="value">#F7BA2A</div></div>
+    <div class="demo-color-box bg-warning">Warning<div class="value">#FF9212</div></div>
   </el-col>
   <el-col :span="6">
-    <div class="demo-color-box bg-danger">Danger<div class="value">#FF4949</div></div>
+    <div class="demo-color-box bg-danger">Danger<div class="value">#FF4802</div></div>
   </el-col>
 </el-row>
 

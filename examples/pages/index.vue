@@ -200,6 +200,7 @@
           <p>Stbui，一套为开发者、设计师和产品经理准备的组件库，提供了配套资源，帮助你的网站快速成型。</p>
         </div>
         <img class="animation" src="~examples/assets/images/stbui.png" alt="Stbui">
+        <canvas width="100%" height="1000" ref="starCanvas"></canvas>
       </div>
     </div>
     <div class="cards">
@@ -249,6 +250,7 @@
 
   export default {
     mounted() {
+
       function typing(theater) {
         theater
           .addScene('产品设计师', 1800, -5, 800)
