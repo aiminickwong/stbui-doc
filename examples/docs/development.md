@@ -28,20 +28,20 @@
 
 ### npm scripts
 ```bash
-npm run start	# 启动开发环境
-npm run dev
-npm run bulid
+npm run start   # 启动开发环境
+npm run dev     # 构建开发代码
+npm run bulid   # 打包产线代码
 ```
 
 ### stbui scripts
 你可以通过 `stbui -h` 帮助查看相关命令
 
 ```bash
-stbui release
-stbui server
-stubi project <name>
-stbui framework <name>
-stbui page <name>
+stbui release <name>    # 构建代码
+stbui server <name>     # 本地服务
+stubi project <name>    # 创建项目
+stbui framework <name>  # 添加公共模块
+stbui page <name>       # 添加业务模块
 ```
 ### 配置文件
 

@@ -135,6 +135,12 @@ background-color:rgba(255,255,255,0.5);
               to="/component">组件
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link
+                    active-class="active"
+                    to="/modules">模块
+            </router-link>
+          </li>
         </ul>
       </div>
     </header>

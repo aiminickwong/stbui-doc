@@ -73,6 +73,21 @@ let startRoute = {
       path: 'development',
       name: '开发指南',
       component: require('./docs/development.md')
+    },
+    {
+      path: 'htmlcss',
+      name: 'html/css 规范',
+      component: require('./docs/development.md')
+    },
+    {
+      path: 'javascript',
+      name: 'javascript 规范',
+      component: require('./docs/development.md')
+    },
+    {
+      path: 'faq',
+      name: '常见问题',
+      component: require('./docs/development.md')
     }
   ]
 };
@@ -83,13 +98,37 @@ let resourceRoute = {
   component: require('./pages/resource.vue')
 };
 
+let modulesRoute = {
+  path: '/modules',
+  name: '模块',
+  redirect: '/modules/comment',
+  component: require('./pages/modules.vue'),
+  children: [
+    {
+      path: 'comment',
+      name: '评论',
+      component: require('./modules/comment.md')
+    },
+    {
+      path: 'share',
+      name: '分享',
+      component: require('./modules/share.md')
+    },
+    {
+      path: 'search',
+      name: '搜索',
+      component: require('./modules/search.md')
+    }
+  ]
+};
+
 let indexRoute = {
   path: '/',
   name: '首页',
   component: require('./pages/index.vue')
 };
 
-route.route = route.route.concat([indexRoute, guideRoute, startRoute, resourceRoute]);
+route.route = route.route.concat([indexRoute, guideRoute, startRoute, modulesRoute, resourceRoute]);
 
 route.route.push({
   path: '*',

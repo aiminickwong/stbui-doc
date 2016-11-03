@@ -50,7 +50,7 @@
   <div class="page-container page-guide">
     <el-row>
       <el-col :span="5">
-        <side-nav :data="navsData" base="/start"></side-nav>
+        <side-nav :data="navsData" base="/modules"></side-nav>
       </el-col>
       <el-col :span="19">
         <router-view class="content"></router-view>
@@ -64,24 +64,44 @@
       return {
         navsData: [
           {
-            path: '/quick',
-            name: '快速上手'
+            path: '/comment',
+            name: '评论'
           },
           {
-            path: '/development',
-            name: '开发指南'
+            path: '/search',
+            name: '搜索'
           },
           {
-            path: '/htmlcss',
-            name: 'html/css 规范'
+            path: '/share',
+            name: '分享'
           },
           {
-            path: '/javascript',
-            name: 'javascript 规范'
+            path: '/footer',
+            name: '页脚'
           },
           {
-            path: '/faq',
-            name: '常见问题'
+            path: '/header',
+            name: '页头'
+          },
+          {
+            path: '/menu',
+            name: '菜单'
+          },
+          {
+            path: '/passport',
+            name: '通行证'
+          },
+          {
+            path: '/chart',
+            name: '图表'
+          },
+          {
+            path: '/list',
+            name: '列表'
+          },
+          {
+            path: '/article',
+            name: '文章'
           }
         ]
       };
