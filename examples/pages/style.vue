@@ -50,7 +50,7 @@
   <div class="page-container page-guide">
     <el-row>
       <el-col :span="5">
-        <side-nav :data="navsData" base="/guide"></side-nav>
+        <side-nav :data="navsData" base="/style"></side-nav>
       </el-col>
       <el-col :span="19">
         <router-view class="content"></router-view>
@@ -59,19 +59,12 @@
   </div>
 </template>
 <script>
+  import navs from '../style.config.json';
+
   export default {
     data() {
       return {
-        navsData: [
-          {
-            path: '/design',
-            name: '设计原则'
-          },
-          {
-            path: '/nav',
-            name: '导航'
-          }
-        ]
+        navsData: navs
       };
     }
   };

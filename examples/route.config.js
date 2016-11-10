@@ -1,12 +1,15 @@
 import navConfig from './nav.config.json';
+import startConfig from './start.config.json';
+import styleConfig from './style.config.json';
 
 const registerRoute = (config) => {
   let route = [{
     path: '/component',
-    redirect: '/component/layout',
+    redirect: '/component/radio',
     component: require('./pages/component.vue'),
     children: []
   }];
+
   function addRoute(page) {
     const component = page.path === '/changelog' ? require('./pages/changelog.vue') : require(`./docs${page.path}.md`);
     let child = {
@@ -20,6 +23,7 @@ const registerRoute = (config) => {
 
     route[0].children.push(child);
   }
+
   config
     .map(nav => {
       if (nav.groups) {
@@ -34,6 +38,7 @@ const registerRoute = (config) => {
         });
       } else {
         addRoute(nav);
+
       }
     });
 
@@ -42,84 +47,156 @@ const registerRoute = (config) => {
 
 const route = registerRoute(navConfig);
 
-let guideRoute = {
-  path: '/guide',
-  name: '指南',
-  redirect: '/guide/design',
-  component: require('./pages/guide.vue'),
-  children: [{
-    path: 'design',
-    name: '设计原则',
-    component: require('./pages/design.vue')
-  }, {
-    path: 'nav',
-    name: '导航',
-    component: require('./pages/nav.vue')
-  }]
+const guideRoute = (config) => {
+  let route = {
+    path: '/guide',
+    name: '指南',
+    redirect: '/guide/design',
+    component: require('./pages/guide.vue'),
+    children: [{
+      path: 'design',
+      name: '设计原则',
+      component: require('./pages/design.vue')
+    }, {
+      path: 'nav',
+      name: '导航',
+      component: require('./pages/nav.vue')
+    }]
+  };
+
+  return route;
 };
 
-let startRoute = {
-  path: '/start',
-  name: '开始使用',
-  redirect: '/start/quick',
-  component: require('./pages/start.vue'),
-  children: [
-    {
-      path: 'quick',
-      name: '快速上手',
-      component: require('./docs/quickstart.md')
-    },
-    {
-      path: 'development',
-      name: '开发指南',
-      component: require('./docs/development.md')
-    },
-    {
-      path: 'htmlcss',
-      name: 'html/css 规范',
-      component: require('./docs/development.md')
-    },
-    {
-      path: 'javascript',
-      name: 'javascript 规范',
-      component: require('./docs/development.md')
-    },
-    {
-      path: 'faq',
-      name: '常见问题',
-      component: require('./docs/development.md')
-    }
-  ]
+const startRoute = (config) => {
+  let route = [{
+    path: '/start',
+    name: '开始使用',
+    redirect: '/start/quick',
+    component: require('./pages/start.vue'),
+    children: []
+  }];
+
+  function addRoute(page) {
+    const component = require(`./start${page.path}.md`);
+    let child = {
+      path: page.path.slice(1),
+      meta: {
+        title: page.title || page.name,
+        description: page.description
+      },
+      component: component.default || component
+    };
+
+    route[0].children.push(child);
+  }
+
+  config
+    .map(nav => {
+      if (nav.groups) {
+        nav.groups.map(group => {
+          group.list.map(page => {
+            addRoute(page);
+          });
+        });
+      } else if (nav.children) {
+        nav.children.map(page => {
+          addRoute(page);
+        });
+      } else {
+        addRoute(nav);
+
+      }
+    });
+
+  return route[0];
 };
 
-let resourceRoute = {
-  path: '/resource',
-  name: '资源',
-  component: require('./pages/resource.vue')
+const styleRoute = (config) => {
+  let route = [{
+    path: '/style',
+    name: '样式',
+    redirect: '/style/layout',
+    component: require('./pages/style.vue'),
+    children: []
+  }];
+
+  function addRoute(page) {
+    const component = require(`./style${page.path}.md`);
+    let child = {
+      path: page.path.slice(1),
+      meta: {
+        title: page.title || page.name,
+        description: page.description
+      },
+      component: component.default || component
+    };
+
+    route[0].children.push(child);
+  }
+
+  config
+    .map(nav => {
+      if (nav.groups) {
+        nav.groups.map(group => {
+          group.list.map(page => {
+            addRoute(page);
+          });
+        });
+      } else if (nav.children) {
+        nav.children.map(page => {
+          addRoute(page);
+        });
+      } else {
+        addRoute(nav);
+
+      }
+    });
+
+  console.log(route[0]);
+  return route[0];
 };
 
-let modulesRoute = {
-  path: '/modules',
-  name: '模块',
-  redirect: '/modules/comment',
-  component: require('./pages/modules.vue'),
-  children: [
-    {
-      path: 'comment',
-      name: '评论',
-      component: require('./modules/comment.md')
-    },
-    {
-      path: 'share',
-      name: '分享',
-      component: require('./modules/share.md')
-    },
-    {
-      path: 'search',
-      name: '搜索',
-      component: require('./modules/search.md')
-    }
-  ]
+const resourceRoute = (config) => {
+  let route = {
+    path: '/resource',
+    name: '资源',
+    component: require('./pages/resource.vue')
+  };
+
+  return route;
+};
+
+const modulesRoute = (config) => {
+  let route = {
+    path: '/modules',
+    name: '模块',
+    redirect: '/modules/comment',
+    component: require('./pages/modules.vue'),
+    children: [
+      {
+        path: 'comment',
+        name: '评论',
+        component: require('./modules/comment.md')
+      },
+      {
+        path: 'share',
+        name: '分享',
+        component: require('./modules/share.md')
+      },
+      {
+        path: 'search',
+        name: '搜索',
+        component: require('./modules/search.md')
+      },
+      {
+        path: 'header',
+        name: '搜索',
+        component: require('./modules/header.md')
+      }
+    ]
+  };
+
+  return route;
 };
 
 let indexRoute = {
@@ -128,7 +205,7 @@ let indexRoute = {
   component: require('./pages/index.vue')
 };
 
-route.route = route.route.concat([indexRoute, guideRoute, startRoute, modulesRoute, resourceRoute]);
+route.route = route.route.concat([indexRoute, guideRoute(), startRoute(startConfig), styleRoute(styleConfig), modulesRoute(), resourceRoute()]);
 
 route.route.push({
   path: '*',

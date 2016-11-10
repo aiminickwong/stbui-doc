@@ -58,6 +58,7 @@
   import { navs } from '../route.config';
   export default {
     data() {
+      console.log(navs);
       return {
         navsData: navs
       };

@@ -1,11 +1,11 @@
 ## 快速上手
 
-Stbui 是一套 xxx，它能够帮助你更轻松更快速地开发项目。
+Stbui，一套为开发者准备的前端集成库，提供了配套资源，帮助你的网站快速成型。
 
 ### 安装 stbui
 
 ```bash
-$ npm install stbui -g
+npm install stbui -g
 ```
 
 如果安装很慢的话，可以尝试使用taobao的源进行安装。具体如下：

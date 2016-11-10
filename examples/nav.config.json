@@ -1,42 +1,7 @@
 [
-
   {
     "name": "基础组件",
     "groups": [
-      {
-        "groupName": "Basic",
-        "list": [
-          {
-            "path": "/layout",
-            "name": "布局 (layout)",
-            "title": "Layout 布局",
-            "description": ""
-          },
-          {
-            "path": "/color",
-            "name": "色彩 (color)",
-            "title": "Color 色彩",
-            "description": ""
-          },
-          {
-            "path": "/typography",
-            "name": "字体 (typography)",
-            "title": "Typography 字体",
-            "description": ""
-          },
-          {
-            "path": "/icon",
-            "name": "图标 (icon)",
-            "title": "Icon 图标"
-          },
-          {
-            "path": "/button",
-            "name": "按钮 (button)",
-            "title": "Button 按钮",
-            "description": "常用的操作按钮"
-          }
-        ]
-      },
       {
         "groupName": "Form",
         "list": [

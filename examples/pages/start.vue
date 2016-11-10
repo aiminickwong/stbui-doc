@@ -59,31 +59,12 @@
   </div>
 </template>
 <script>
+  import navs from '../start.config.json';
+
   export default {
     data() {
       return {
-        navsData: [
-          {
-            path: '/quick',
-            name: '快速上手'
-          },
-          {
-            path: '/development',
-            name: '开发指南'
-          },
-          {
-            path: '/htmlcss',
-            name: 'html/css 规范'
-          },
-          {
-            path: '/javascript',
-            name: 'javascript 规范'
-          },
-          {
-            path: '/faq',
-            name: '常见问题'
-          }
-        ]
+        navsData: navs
       };
     }
   };
